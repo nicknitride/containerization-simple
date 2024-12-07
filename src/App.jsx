@@ -12,8 +12,7 @@ function App() {
       <div>
       <h1>Counter Application</h1>
       <p>Description: This application iterates a counter
-        when a button is clicked and sends this number back to 
-        a MySQL Node backend which enables this count to remain persistent.
+        when a button is clicked.
       </p>
       <h3>In Fulfillment of ISCS 30.23 - Containerization</h3>
       </div>
