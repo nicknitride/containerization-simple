@@ -21,8 +21,12 @@ FROM nginx:stable-alpine
 # # Step 8: Copy the built files to the nginx server's default directory
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Step 9: Expose the default port used by nginx
-EXPOSE 80
+# Step 9: Configure Nginx to listen on the dynamic PORT environment variable
+# Replace the default Nginx configuration
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
-# Step 10: Start nginx
+# Step 10: Expose the default port used by Cloud Run
+EXPOSE 8080
+
+# Step 11: Start nginx
 CMD ["nginx", "-g", "daemon off;"]
